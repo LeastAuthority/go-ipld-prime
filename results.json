@@ -1,0 +1,572 @@
+{
+	"Golang errors": {
+		"/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/_rsrch/nodeassembler/nodeAssembler.go": [
+			{
+				"line": 87,
+				"column": 7,
+				"error": "mb.AssembleValue undefined (type MapAssembler has no field or method AssembleValue)"
+			},
+			{
+				"line": 89,
+				"column": 8,
+				"error": "mb.AssembleValue undefined (type MapAssembler has no field or method AssembleValue)"
+			},
+			{
+				"line": 91,
+				"column": 6,
+				"error": "mb.AssembleValue undefined (type MapAssembler has no field or method AssembleValue)"
+			}
+		],
+		"/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/_rsrch/nodeworkshop/nodeWorkshop.go": [
+			{
+				"line": 79,
+				"column": 2,
+				"error": "undeclared name: nsB"
+			},
+			{
+				"line": 79,
+				"column": 16,
+				"error": "undeclared name: field1nb"
+			},
+			{
+				"line": 79,
+				"column": 26,
+				"error": "undeclared name: arg0scalar"
+			},
+			{
+				"line": 79,
+				"column": 38,
+				"error": "undeclared name: arg1scalar"
+			},
+			{
+				"line": 79,
+				"column": 50,
+				"error": "undeclared name: arg2scalar"
+			},
+			{
+				"line": 80,
+				"column": 2,
+				"error": "undeclared name: nsC"
+			},
+			{
+				"line": 80,
+				"column": 16,
+				"error": "undeclared name: field2nb"
+			},
+			{
+				"line": 80,
+				"column": 26,
+				"error": "undeclared name: arg0scalar"
+			},
+			{
+				"line": 80,
+				"column": 38,
+				"error": "undeclared name: arg1scalar"
+			},
+			{
+				"line": 89,
+				"column": 2,
+				"error": "undeclared name: nsC"
+			},
+			{
+				"line": 89,
+				"column": 16,
+				"error": "undeclared name: ws"
+			},
+			{
+				"line": 89,
+				"column": 34,
+				"error": "undeclared name: arg0scalar"
+			},
+			{
+				"line": 89,
+				"column": 46,
+				"error": "undeclared name: arg1scalar"
+			}
+		]
+	},
+	"Issues": [
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "",
+				"URL": ""
+			},
+			"rule_id": "G307",
+			"details": "Deferring unsafe method \"*os.File\" on type \"Close\"",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/schema/gen/go/generate.go",
+			"code": "defer f.Close()",
+			"line": "75",
+			"column": "2"
+		},
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "276",
+				"URL": "https://cwe.mitre.org/data/definitions/276.html"
+			},
+			"rule_id": "G302",
+			"details": "Expect file permissions to be 0600 or less",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/schema/gen/go/generate.go",
+			"code": "os.OpenFile(filename, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)",
+			"line": "71",
+			"column": "12"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat([]byte{' '}, 4))",
+			"line": "384",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/node/tests/traversalBenchmarks.go",
+			"code": "traversal.WalkMatching(node, sel, func(tp traversal.Progress, n ipld.Node) error {\n\t\t\t\t\tvisitCountSanityCheck++ // this sanity check is sufficiently cheap to be worth it\n\t\t\t\t\treturn nil              // no need to do anything here; just care about exercising the walk internals.\n\t\t\t\t})",
+			"line": "41-44",
+			"column": "5"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/node/tests/unmarshalBenchmarks.go",
+			"code": "codec.Marshal(node, refmtjson.NewEncoder(\u0026buf, refmtjson.EncodeOptions{}))",
+			"line": "57",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "242",
+				"URL": "https://cwe.mitre.org/data/definitions/242.html"
+			},
+			"rule_id": "G103",
+			"details": "Use of unsafe calls should be audited",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/_rsrch/methodsets/viaUnsafe.go",
+			"code": "unsafe.Pointer(x)",
+			"line": "13",
+			"column": "28"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "242",
+				"URL": "https://cwe.mitre.org/data/definitions/242.html"
+			},
+			"rule_id": "G103",
+			"details": "Use of unsafe calls should be audited",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/_rsrch/methodsets/viaUnsafe.go",
+			"code": "unsafe.Pointer(x)",
+			"line": "17",
+			"column": "18"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "dagjson.Marshal(basicnode.NewString(string(cn)), json.NewEncoder(\u0026buf, json.EncodeOptions{}))",
+			"line": "171",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "stride(ctx, v)",
+			"line": "268",
+			"column": "5"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{'[', '\\n'})",
+			"line": "316",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{','})",
+			"line": "328",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{'\\n'})",
+			"line": "330",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat(ctx.cfg.Indent, ctx.indent))",
+			"line": "333",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{']'})",
+			"line": "334",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat(ctx.cfg.Indent, ctx.indent))",
+			"line": "342",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{'{'})",
+			"line": "343",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat([]byte{' '}, tab.keySize[col]))",
+			"line": "383",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/node/tests/traversalBenchmarks.go",
+			"code": "traversal.WalkMatching(node, sel, func(tp traversal.Progress, n ipld.Node) error {\n\t\t\tvisitCountSanityCheck++ // this sanity check is sufficiently cheap to be worth it\n\t\t\treturn nil              // no need to do anything here; just care about exercising the walk internals.\n\t\t})",
+			"line": "20-23",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat([]byte{' '}, tab.colSize[col]))",
+			"line": "385",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(ctx.spare.Bytes())",
+			"line": "400",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{','})",
+			"line": "406",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat([]byte{' '}, tab.colSize[col]-computedSize+1))",
+			"line": "407",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{','})",
+			"line": "409",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{','})",
+			"line": "433",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{'\\n'})",
+			"line": "439",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(bytes.Repeat(ctx.cfg.Indent, ctx.indent))",
+			"line": "441",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{','})",
+			"line": "459",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{'}'})",
+			"line": "465",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write(ctx.cfg.Color.KeyHighlight)",
+			"line": "471",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte(\"\\033[0m\"))",
+			"line": "477",
+			"column": "3"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{':'})",
+			"line": "479",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/codec/jst/jst.go",
+			"code": "w.Write([]byte{' '})",
+			"line": "480",
+			"column": "2"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/node/tests/mapSpecs.go",
+			"code": "va.AssignInt(2)",
+			"line": "120",
+			"column": "4"
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"ID": "703",
+				"URL": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled.",
+			"file": "/Users/storj/dev/leastauthority/filecoin/go-ipld-prime/node/tests/mapSpecs.go",
+			"code": "ka.AssignString(\"woo\")",
+			"line": "110",
+			"column": "4"
+		}
+	],
+	"Stats": {
+		"files": 190,
+		"lines": 27757,
+		"nosec": 0,
+		"found": 34
+	}
+}
