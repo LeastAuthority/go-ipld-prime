@@ -1,12 +1,12 @@
-package dagcbor
+package dagjson
 
 import (
-	"flag"
-	"os"
-	"testing"
+"flag"
+"os"
+"testing"
 
-	fleece "github.com/leastauthority/fleece/fuzzing"
-	"github.com/stretchr/testify/require"
+fleece "github.com/leastauthority/fleece/fuzzing"
+"github.com/stretchr/testify/require"
 )
 
 var (
