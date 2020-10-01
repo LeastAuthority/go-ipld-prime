@@ -16,7 +16,8 @@ var (
 	skipPatternDelimiter string
 	safe, verbose        bool
 
-	env *fleece.Env
+	env    *fleece.Env
+	filters []fleece.IterFilter
 )
 
 func init() {
@@ -31,6 +32,14 @@ func init() {
 func TestMain(m *testing.M) {
 	flag.Parse()
 	env = fleece.NewEnv(fleeceDir)
+
+	skipFilter := fleece.SkipFilter(skipPattern, skipPatternDelimiter, verbose)
+	filters = []fleece.IterFilter{skipFilter}
+	if safe {
+		filters = append(filters,
+			fleece.SkipTimedOut,
+			fleece.SkipOutOfMemory)
+	}
 
 	os.Exit(m.Run())
 }

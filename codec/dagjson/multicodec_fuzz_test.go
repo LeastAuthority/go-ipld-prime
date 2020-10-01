@@ -1,3 +1,5 @@
+//+build gofuzz
+
 package dagjson
 
 import (
@@ -16,7 +18,8 @@ var (
 	skipPatternDelimiter string
 	safe, verbose        bool
 
-	env *fleece.Env
+	env    *fleece.Env
+	filters []fleece.IterFilter
 )
 
 func init() {
@@ -32,17 +35,18 @@ func TestMain(m *testing.M) {
 	flag.Parse()
 	env = fleece.NewEnv(fleeceDir)
 
-	os.Exit(m.Run())
-}
-
-func TestFuzzMulticodecDecodeEncode(t *testing.T) {
-	filters := []fleece.IterFilter{fleece.SkipFilter(skipPattern, skipPatternDelimiter, verbose)}
+	skipFilter := fleece.SkipFilter(skipPattern, skipPatternDelimiter, verbose)
+	filters = []fleece.IterFilter{skipFilter}
 	if safe {
 		filters = append(filters,
 			fleece.SkipTimedOut,
 			fleece.SkipOutOfMemory)
 	}
 
+	os.Exit(m.Run())
+}
+
+func TestFuzzMulticodecDecodeEncode(t *testing.T) {
 	_, panics, _ := fleece.
 		MustNewCrasherIterator(env, FuzzMulticodecDecodeEncode, filters...).
 		TestFailingLimit(t, crashLimit)
