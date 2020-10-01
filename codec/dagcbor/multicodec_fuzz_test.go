@@ -44,7 +44,7 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-func TestFuzzMulticodecDecodeEncode(t *testing.T) {
+func TestFuzzCBORDecodeEncode(t *testing.T) {
 	filters := []fleece.IterFilter{fleece.SkipFilter(skipPattern, skipPatternDelimiter, verbose)}
 	if safe {
 		filters = append(filters,
@@ -53,7 +53,7 @@ func TestFuzzMulticodecDecodeEncode(t *testing.T) {
 	}
 
 	_, panics, _ := fleece.
-		MustNewCrasherIterator(env, FuzzMulticodecDecodeEncode, filters...).
+		MustNewCrasherIterator(env, FuzzCBORDecodeEncode, filters...).
 		TestFailingLimit(t, crashLimit)
 
 	require.Zero(t, panics)

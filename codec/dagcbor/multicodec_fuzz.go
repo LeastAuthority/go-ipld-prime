@@ -10,7 +10,7 @@ import (
 	"reflect"
 )
 
-func FuzzMulticodecDecodeEncode(data []byte) int {
+func FuzzCBORDecodeEncode(data []byte) int {
 	builder1 := basicnode.Prototype.Any.NewBuilder()
 	buf1 := bytes.NewBuffer(data)
 	if err := Decoder(builder1, buf1); err != nil {

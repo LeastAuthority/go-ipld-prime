@@ -5,12 +5,13 @@ package dagjson
 import (
 	"bytes"
 	"fmt"
+	"reflect"
+
 	basicnode "github.com/ipld/go-ipld-prime/node/basic"
 	fleece "github.com/leastauthority/fleece/fuzzing"
-	"reflect"
 )
 
-func FuzzMulticodecDecodeEncode(data []byte) int {
+func FuzzJSONDecodeEncode(data []byte) int {
 	builder1 := basicnode.Prototype.Any.NewBuilder()
 	buf1 := bytes.NewBuffer(data)
 	if err := Decoder(builder1, buf1); err != nil {

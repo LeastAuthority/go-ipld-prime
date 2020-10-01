@@ -46,9 +46,9 @@ func TestMain(m *testing.M) {
 	os.Exit(m.Run())
 }
 
-func TestFuzzMulticodecDecodeEncode(t *testing.T) {
+func TestFuzzJSONDecodeEncode(t *testing.T) {
 	_, panics, _ := fleece.
-		MustNewCrasherIterator(env, FuzzMulticodecDecodeEncode, filters...).
+		MustNewCrasherIterator(env, FuzzJSONDecodeEncode, filters...).
 		TestFailingLimit(t, crashLimit)
 
 	require.Zero(t, panics)
